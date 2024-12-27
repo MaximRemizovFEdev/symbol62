@@ -1,0 +1,22 @@
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    padding: 25px;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.flexCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav{
+    padding: 25px;
+}

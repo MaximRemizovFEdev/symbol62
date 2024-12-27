@@ -1,0 +1,24 @@
+.carouselItem {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px; 
+    height: 320px; 
+    margin: 0 12.5px; */
+    object-fit: cover;
+    width: 100%;
+}
+
+.clientsHead {
+    width: 100%;
+}
+/* Мобильные стили: только один слайд */
+@media (max-width: 768px) {
+    /* .carousel {
+        width: 100%; /* Ширина для мобильных устройств */
+    /* } */
+
+    .carouselItem {
+        width: 100%; /* Занимает всю ширину контейнера */
+    }
+}
