@@ -11,7 +11,7 @@ const TitleBase = (props) => {
       {list.map((i) => <h2 className="wrapper-tag" key={i}>/ {String(i).toUpperCase()}</h2>)}
       <div className={styles.wrapper__buttons}>
         <FormModal /> {/*тут кнопка "сделать заказ" */}
-        <div style={{ width: "100%", maxWidth: "40px" }}></div>
+        <div style={{ width: "100%", maxWidth: "40px", height: "10px" }}></div>
         <Button
           text="смотреть прайс"
           type="a"
