@@ -136,13 +136,13 @@ const FormModal = () => {
   };
 
   const handleFinalSubmit = () => {
-    console.log('Final Data:', {
+    console.log("Final Data:", {
       result,
       quantities,
       ...formData,
     });
     closeModal(); // Закрыть модальное окно после отправки
-  }
+  };
 
   return (
     <>
@@ -166,7 +166,7 @@ const FormModal = () => {
                     {option.values.map((value) => (
                       <Form.Check
                         key={value}
-                        type="radio"
+                        type="checkbox"
                         label={value}
                         name={option.name}
                         value={value}
@@ -184,7 +184,12 @@ const FormModal = () => {
               {result.map((item) => (
                 <Form.Group
                   key={item}
-                  style={{ display: "flex", alignItems: "center" }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: "10px"
+                  }}
                 >
                   <Form.Label style={{ marginRight: "10px" }}>
                     {item}
@@ -236,17 +241,29 @@ const FormModal = () => {
         </Modal.Body>
         <Modal.Footer className={styles.bgColor}>
           {step === 1 && (
-            <Btn variant="primary" onClick={handleNext}>
+            <Btn
+              variant="primary"
+              onClick={handleNext}
+              disabled={!result.length}
+            >
               Далее
             </Btn>
           )}
           {step === 2 && (
-            <Btn variant="success" onClick={handleSubmit}>
+            <Btn
+              variant="success"
+              onClick={handleSubmit}
+              disabled={!result.length}
+            >
               Сделать заявку
             </Btn>
           )}
           {step === 3 && (
-            <Btn variant="success" onClick={handleFinalSubmit}>
+            <Btn
+              variant="success"
+              onClick={handleFinalSubmit}
+              disabled={!formData.email}
+            >
               Отправить
             </Btn>
           )}
