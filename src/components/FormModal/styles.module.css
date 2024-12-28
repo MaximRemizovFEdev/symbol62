@@ -29,3 +29,7 @@
     font-size: 20px;
     cursor: pointer;
   }
+
+  .bgColor {
+    background:#333333;
+  }

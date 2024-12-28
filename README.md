@@ -38,3 +38,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Есть вот такое модальное окно. Надо сделать acordion по name. При раскрытии аккордиона список из values с радио кнопкой.
+При клике на радио кнопку будет записываться в массив result Строка name + value. Это будет первый шаг. Внизу окна кнопка "Далее" Которая отрисовывает на основе result новую форму. Слева строка - элемент из result, справа поле ввода (40px width), значение по умолчанию - 0. можно вводить только положительные числа. Внизу кнопка "Сделать заявку". По нажатию данные введенные в инпуты добавляются к соответствующим элементам из массива result, отрисовывается новая форма: поле "введите имя", textfield "сообщение", поле "email" и кнопка "Отправить" По нажатию на "Отправить" выведи в консоль result
+const FormModal = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+
+  const closeModal = () => setIsModalOpen(false);
+
+  return (
+    <>
+      <Button
+        text="сделать заказ"
+        type="button"
+        variant="fill"
+        onClick={openModal}
+      />
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h2>Это модальное окно</h2>
+        <p>Здесь может быть любой контент.</p>
+      </Modal>
+    </>
+  );
+};

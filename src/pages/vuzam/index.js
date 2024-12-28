@@ -4,6 +4,7 @@ import PaddingBox from '@/components/PaddingBox/PaddingBox';
 import ExampleCaseSlider from '@/views/ExampleCaseSlider/ExampleCaseSlider';
 import TitleVuzam from '@/views/TitleVuzam/TitleVuzam';
 
+// Главная
 export default function Page() {
   return (
     <main className={styles.main}>
