@@ -160,7 +160,7 @@ const FormModal = () => {
           {step === 1 && (
             <Accordion defaultActiveKey="0">
               {options.map((option, idx) => (
-                <Accordion.Item eventKey={idx}>
+                <Accordion.Item eventKey={idx} key={idx}>
                   <Accordion.Header>{option.name}</Accordion.Header>
                   <Accordion.Body>
                     {option.values.map((value) => (
