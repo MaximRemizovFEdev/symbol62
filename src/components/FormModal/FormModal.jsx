@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Modal, Button as Btn, Accordion, Form } from "react-bootstrap";
+import {
+  Modal,
+  Button as Btn,
+  Accordion,
+  Form,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 import styles from "./styles.module.css";
 import Button from "../Button/Button";
 
@@ -123,6 +131,13 @@ const FormModal = () => {
   const handleInputChange = (e, key) => {
     setQuantities({ ...quantities, [key]: e.target.value });
   };
+  const handleQuantityChange = (item, change) => {
+    setQuantities((prevQuantities) => {
+      const currentQuantity = prevQuantities[item] || 1; // Получаем текущее количество
+      const newQuantity = Math.max(currentQuantity + change, 0); // Убеждаемся, что количество не меньше 0
+      return { ...prevQuantities, [item]: newQuantity }; // Возвращаем новое состояние
+    });
+  };
 
   const handleSubmit = () => {
     setStep(3);
@@ -200,13 +215,29 @@ const FormModal = () => {
                   <Form.Label style={{ marginRight: "10px" }}>
                     {item}
                   </Form.Label>
-                  <Form.Control
-                    type="number"
-                    value={quantities[item] || 1}
-                    onChange={(e) => handleInputChange(e, item)}
-                    style={{ width: "80px" }}
-                    min="0"
-                  />
+
+                  <div style={{display: "flex"}}>
+                    <Btn
+                      variant="outline-secondary"
+                      onClick={() => handleQuantityChange(item, -1)}
+                      disabled={(quantities[item] || 1) <= 0} // Disable если значение 0
+                    >
+                      -
+                    </Btn>
+                    <Form.Control
+                      type="number"
+                      value={quantities[item] || 1}
+                      onChange={(e) => handleInputChange(e, item)}
+                      style={{ width: "60px", margin: "0 10px", textAlign: "center" }}
+                      min="0"
+                    />
+                    <Btn
+                      variant="outline-secondary"
+                      onClick={() => handleQuantityChange(item, 1)}
+                    >
+                      +
+                    </Btn>
+                  </div>
                 </Form.Group>
               ))}
             </>
