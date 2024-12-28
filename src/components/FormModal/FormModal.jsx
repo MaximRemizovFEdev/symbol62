@@ -105,11 +105,15 @@ const FormModal = () => {
     setStep(1);
   };
 
-  const handleRadioChange = (name, value) => {
-    setResult((prev) => [
-      ...prev.filter((item) => !item.startsWith(name)),
-      `${name} + ${value}`,
-    ]);
+  const handleCheckboxChange = (name, value) => {
+    const elem = `${name} + ${value}`;
+    setResult((prev) => {
+      if (prev.includes(elem)) {
+        return prev.filter((item) => item !== elem);
+      } else {
+        return [...prev, elem];
+      }
+    });
   };
 
   const handleNext = () => {
@@ -170,7 +174,9 @@ const FormModal = () => {
                         label={value}
                         name={option.name}
                         value={value}
-                        onChange={() => handleRadioChange(option.name, value)}
+                        onChange={() =>
+                          handleCheckboxChange(option.name, value)
+                        }
                       />
                     ))}
                   </Accordion.Body>
@@ -188,7 +194,7 @@ const FormModal = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    marginBottom: "10px"
+                    marginBottom: "10px",
                   }}
                 >
                   <Form.Label style={{ marginRight: "10px" }}>
@@ -196,7 +202,7 @@ const FormModal = () => {
                   </Form.Label>
                   <Form.Control
                     type="number"
-                    value={quantities[item] || 0}
+                    value={quantities[item] || 1}
                     onChange={(e) => handleInputChange(e, item)}
                     style={{ width: "80px" }}
                     min="0"
