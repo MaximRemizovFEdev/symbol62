@@ -7,6 +7,8 @@ import 'swiper/css/pagination';
 import styles from "./SliderBase.module.css";
 
 export const SliderBase = (props) => {
+  if (!props?.content?.length) return null;
+
   const prepareContent = props.content.map((item) => (
     <SwiperSlide style={{width: `${props.widhtItem}px`}} key={item.id}>
       <Image 
