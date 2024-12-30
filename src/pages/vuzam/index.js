@@ -21,7 +21,7 @@ export const getServerSideProps = async () => {
     {id: "113", imgUrl: "/199215810_2808277852.jpg", imgAlt: "политех"},
     {id: "114", imgUrl: "/rp-Ke5GnVaU.jpg", imgAlt: "политех"},
     {id: "115", imgUrl: "/201938762_3935429286.jpg", imgAlt: "политех"},
-];
+  ];
 
   return {
       props: {

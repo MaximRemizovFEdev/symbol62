@@ -5,9 +5,20 @@ import { VideoBackgroundMain } from "@/views/VideoBackgroundMain/VideoBackground
 
 export const getServerSideProps = async () => {
     const videoUrl = 'https://vkvideo.ru/video_ext.php?oid=-199531378&id=456239162&hd=2&autoplay=1&js_api=1&loop=1&controls=0&mute=1&muteв=1&volume=0';
+
+    const exampleContent = [ 
+        {id: "124", imgUrl: "/199215810_2808277852.jpg", imgAlt: "политех"},
+        {id: "111", imgUrl: "/201938762_3935429286.jpg", imgAlt: "rsreu"}, 
+        {id: "112", imgUrl: "/rp-Ke5GnVaU.jpg", imgAlt: "политех"},
+        {id: "113", imgUrl: "/199215810_2808277852.jpg", imgAlt: "политех"},
+        {id: "114", imgUrl: "/rp-Ke5GnVaU.jpg", imgAlt: "политех"},
+        {id: "115", imgUrl: "/201938762_3935429286.jpg", imgAlt: "политех"},
+      ];
+    
     return {
         props: {
             videoUrl: videoUrl,
+            exampleContent: exampleContent,
         }
     }
 }
@@ -65,7 +76,7 @@ export default function Home(props) {
         </div>
       </section>
       <section className={styles.block + " " + "works"}>
-        <ExampleCaseSlider />
+        <ExampleCaseSlider content={props.exampleContent} />
       </section>
       <section className={styles.block + " " + "contacts"}>
         <h3>Контакты</h3>
