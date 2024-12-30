@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./style.module.css";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,12 +66,6 @@ export default function Header() {
     return () => window.removeEventListener("resize", updateMenu);
   }, []);
 
-  // useEffect(() => {
-  //   if (navItemRefs.length === navItems.length) {
-  //     updateMenu();
-  //   }
-  // }, [navItemRefs])
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -79,7 +74,12 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.quickContact}>
-        <p>VK link</p>
+        <a href="https://vk.com/universymbols" target="_blank">
+          <Image src={"./vk-icon.svg"} width={40} height={40} alt="vk.com/universymbols"/>
+        </a>
+        <a href="https://vk.com/universymbols" target="_blank">
+          <Image src={"./telegram-icon.svg"} width={40} height={40} alt="vk.com/universymbols"/>
+        </a>
       </div>
       <div className={styles.nav} ref={navContainerRef}>
         {(visibleItems.length ? visibleItems : navItems).map((item, index) => (

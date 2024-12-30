@@ -32,7 +32,7 @@ export const getServerSideProps = async () => {
 }
 
 // Отрядам
-export default function Page() {
+export default function Page(props) {
   return (
     <main className={styles.main}>
       <PaddingBox />
