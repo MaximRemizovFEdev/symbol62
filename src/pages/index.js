@@ -3,14 +3,23 @@ import styles from "../page.module.css";
 import TitleMain from "@/views/TitleMain/TitleMain";
 import { VideoBackgroundMain } from "@/views/VideoBackgroundMain/VideoBackgroundMain";
 
-export default function Home() {
+export const getServerSideProps = async () => {
+    const videoUrl = 'https://vkvideo.ru/video_ext.php?oid=-199531378&id=456239162&hd=2&autoplay=1&js_api=1&loop=1&controls=0&mute=1&muteв=1&volume=0';
+    return {
+        props: {
+            videoUrl: videoUrl,
+        }
+    }
+}
+
+export default function Home(props) {
   return (
     <>
       <main className={styles.main}>
         <TitleMain />
         <div className={styles.background}>
           <div className={styles.backgroundLayer}></div>
-          <VideoBackgroundMain />
+          <VideoBackgroundMain videoUrl={props.videoUrl} />
         </div>
       </main>
       <section className={styles.block + " " + "about"}>

@@ -1,19 +1,23 @@
 import { useEffect, useRef } from 'react';
 import Script from 'next/script';
 
-export const VideoPalyerBase = ({url}) => {
+export const VideoPalyerBase = ({videoUrl}) => {
     const iframeRef = useRef(null);
     const playerRef = useRef(null);
+
   
+    if (!videoUrl) return;
+
     useEffect(() => {
-      // Проверяем, загружен ли скрипт
-      if (window.VK && iframeRef.current) {
-        playerRef.current = window.VK.VideoPlayer(iframeRef.current);
-        
-        // Замьютить видео
-        playerRef.current.mute();
-      }
-    }, []);
+        // Проверяем, загружен ли скрипт
+        if (window.VK && iframeRef.current) {
+            console.log("###", iframeRef.current)
+          playerRef.current = window.VK.VideoPlayer(iframeRef.current);
+          
+          // Замьютить видео
+          playerRef.current.mute();
+        }
+      }, []);
   
     return (
       <>
@@ -30,7 +34,7 @@ export const VideoPalyerBase = ({url}) => {
         <iframe 
             ref={iframeRef}
             style={{ height: "100vh", width: "100vw", border: 'none' }}
-            src={`${url}&autoplay=1&amp;loop=1&amp;js_api=1&amp;controls=0&amp;mute=1&amp;muteв=1&amp;volume=0&amp;`}
+            src={`${videoUrl}`}
             frameborder="0" 
             allow="autoplay; encrypted-media; fullscreen; clipboard-write; " 
             webkitallowfullscreen 

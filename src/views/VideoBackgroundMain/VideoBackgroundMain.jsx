@@ -1,7 +1,7 @@
 import { VideoPalyerBase } from "@/components/VideoPlayerBase/VideoPalyerBase"
 
-export const VideoBackgroundMain = () => {
+export const VideoBackgroundMain = ({videoUrl}) => {
     return (
-        <VideoPalyerBase url={'https://vkvideo.ru/video_ext.php?oid=-199531378&id=456239162&hd=2'} />
+        <VideoPalyerBase videoUrl={videoUrl} />
     )
 }
