@@ -1,13 +1,12 @@
+import PaddingBox from '@/components/PaddingBox/PaddingBox';
 import styles from '../../page.module.css';
+import TitleVuzam from '@/views/TitleVuzam/TitleVuzam';
+
 export default function Page() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>Hello World /unity</p>
-        <p>Символика - ИП Афонин</p>
-        для ВУЗОВ для объединений для отрядов для лагерей для профсоюзов
-        грантополучателям
-      </div>
+      <PaddingBox />
+      <TitleVuzam />
     </main>
   );
 }

@@ -22,6 +22,7 @@ export default function Header() {
     { href: "/org", label: "Организаторам мероприятий" },
     { href: "/camp", label: "Лагерям" },
     { href: "/works", label: "Наши работы" },
+    { href: "/about", label: "О нас" },
     { href: "/contact", label: "Контакты" },
   ];
 
