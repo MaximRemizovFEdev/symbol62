@@ -3,6 +3,7 @@ import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./style.module.css";
 import Image from "next/image";
+import FormModal from "../FormModal/FormModal";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,12 +75,21 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.quickContact}>
-        <a href="https://vk.com/universymbols" target="_blank">
-          <Image src={"./vk-icon.svg"} width={40} height={40} alt="vk.com/universymbols"/>
+        <a id="logo" href="#">
+          <Image src={"./logo.svg"} width={40} height={40} alt={"symb62"} />
         </a>
-        <a href="https://vk.com/universymbols" target="_blank">
-          <Image src={"./telegram-icon.svg"} width={40} height={40} alt="vk.com/universymbols"/>
-        </a>
+        <div className={styles.quickContactMenu}>
+          <a href="tel:+79065435369">+7 (906) 543-53-69</a>
+          <a href="https://vk.com/universymbols" target="_blank">
+            <Image src={"./vk-icon.svg"} width={40} height={40} alt={"vk.com/universymbols"} />
+          </a>
+          <a href="https://vk.com/universymbols" target="_blank">
+            <Image src={"./telegram-icon.svg"} width={40} height={40} alt={"vk.com/universymbols"} />
+          </a>
+          <div style={{display: "inline-flex", alignItems: "center"}}>
+            <FormModal sizeBtn={"small"} />
+          </div>
+        </div>
       </div>
       <div className={styles.nav} ref={navContainerRef}>
         {(visibleItems.length ? visibleItems : navItems).map((item, index) => (

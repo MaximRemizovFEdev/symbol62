@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    background-color: #fc8123;
+    background-color: #FF5708;
     color: aliceblue;
     position: fixed;
     top: 0;
@@ -9,8 +9,16 @@
 }
 
 .quickContact {
-    background: #000000;
+    background: #293D59;
     padding: 10px 8px;
+    display: flex;
+}
+
+.quickContactMenu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .nav {
@@ -38,7 +46,7 @@
     position: absolute;
     top: 100%; /* Чтобы выпадающее меню было под навигацией */
     right: 0;
-    background: #fc8123;
+    background: #FF5708;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1001; /* Чтобы дропдаун был выше других элементов */
     display: flex;

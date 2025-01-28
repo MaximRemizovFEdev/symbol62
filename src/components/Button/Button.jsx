@@ -1,7 +1,11 @@
 import styles from "./style.module.css";
 
-export default function Button ({ text, variant, type, onClick, href }) {
-    const clnm = `${styles.btn} ${variant === "fill" ? styles.fill : ""}`;
+export default function Button ({ text, variant, type, onClick, href, size }) {
+    const clnm = `
+        ${styles.btn} 
+        ${variant === "fill" ? styles.fill : styles.stroke} 
+        ${size === "small" ? styles.small : styles.big}
+    `;
 
     if (type === "a") return (
         <a className={clnm} href={href} target="_blank">

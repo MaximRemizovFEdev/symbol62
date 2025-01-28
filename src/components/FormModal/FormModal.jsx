@@ -4,29 +4,29 @@ import {
   Button as Btn,
   Accordion,
   Form,
-  Container,
-  Row,
-  Col,
+  // Container,
+  // Row,
+  // Col,
 } from "react-bootstrap";
 import styles from "./styles.module.css";
 import Button from "../Button/Button";
 
-const ModalBase = (props) => {
-  const { isOpen, onClose, children } = props;
+// const ModalBase = (props) => {
+//   const { isOpen, onClose, children } = props;
 
-  if (!isOpen) return null;
+//   if (!isOpen) return null;
 
-  return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
-        <button className={styles.closeButton} onClick={onClose}>
-          &times;
-        </button>
-        {children}
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className={styles.modalOverlay}>
+//       <div className={styles.modalContent}>
+//         <button className={styles.closeButton} onClick={onClose}>
+//           &times;
+//         </button>
+//         {children}
+//       </div>
+//     </div>
+//   );
+// };
 
 const dataForm = [
   {
@@ -93,7 +93,8 @@ const dataForm = [
     ],
   },
 ];
-const FormModal = () => {
+const FormModal = (props) => {
+  const {sizeBtn} = props;
   const options = dataForm;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [result, setResult] = useState([]);
@@ -170,6 +171,7 @@ const FormModal = () => {
         type="button"
         variant="fill"
         onClick={openModal}
+        size={sizeBtn}
       />
       <Modal show={isModalOpen} onHide={closeModal}>
         <Modal.Header closeButton className={styles.bgColor}>
