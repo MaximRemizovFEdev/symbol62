@@ -3,6 +3,7 @@ import styles from "../page.module.css";
 import TitleMain from "@/views/TitleMain/TitleMain";
 import { VideoBackgroundMain } from "@/views/VideoBackgroundMain/VideoBackgroundMain";
 import BGCircle from "@/components/BGCircle/BGCircle";
+import ContactBlock from "@/components/ContactBlock/ContactBlock";
 
 export const getServerSideProps = async () => {
   const videoUrl =
@@ -84,26 +85,10 @@ export default function Home(props) {
           <ExampleCaseSlider content={props.exampleContent} />
         </section>
         <section className={styles.block + " " + "contacts"}>
-          <h3>Контакты</h3>
-          <div className={styles.content + " " + styles.textRight}>
-            <img
-              alt="картинка"
-              src="https://sun9-61.userapi.com/impg/9Zf2G-ICSKRXXXBvQLwgX7I74DKfuB5cqddixg/bqU6NN3bsw8.jpg?size=479x479&quality=95&sign=7b2bc71208ff59e309afbde4c04adf7e&type=album"
-            />
-            <span className="text">lorem ipsum</span>
-          </div>
+        <ContactBlock />
         </section>
 
-        <section className={styles.block + " " + "form"}>
-          <h3>Обратная связь</h3>
-          <div className={styles.content + " " + styles.textLeft}>
-            <img
-              alt="картинка"
-              src="https://sun9-61.userapi.com/impg/9Zf2G-ICSKRXXXBvQLwgX7I74DKfuB5cqddixg/bqU6NN3bsw8.jpg?size=479x479&quality=95&sign=7b2bc71208ff59e309afbde4c04adf7e&type=album"
-            />
-            <span className="text">lorem ipsum</span>
-          </div>
-        </section>
+        
       </div>
     </>
   );
