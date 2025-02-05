@@ -33,6 +33,7 @@ export default function Footer() {
                         <Link href='/org'>Организаторам мероприятий</Link>
                         <Link href='/camp'>Лагерям</Link>
                         <Link href='/works'>Наши работы</Link>
+                        <Link href='/payment'>Доставка и оплата</Link>
                         <Link href='/contact'>Контакты</Link>
                     </div>
                 </div>

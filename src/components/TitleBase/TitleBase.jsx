@@ -7,7 +7,7 @@ const TitleBase = (props) => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className="wrapper-title">{title}</h1>
+      <h1 className={styles.wrapperTitle}>{title}</h1>
       {list.map((i) => <h2 className="wrapper-tag" key={i}>/ {String(i).toUpperCase()}</h2>)}
       <div className={styles.wrapper__buttons}>
         <FormModal /> {/*тут кнопка "сделать заказ" */}

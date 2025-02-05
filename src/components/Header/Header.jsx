@@ -25,6 +25,7 @@ export default function Header() {
     { href: "/camp", label: "Лагерям" },
     { href: "/works", label: "Наши работы" },
     { href: "/about", label: "О нас" },
+    { href: "/payment", label: "Доставка и оплата" },
     { href: "/contact", label: "Контакты" },
   ];
 

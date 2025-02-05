@@ -13,7 +13,15 @@
     justify-content: center;
   }
 
+  .wrapperTitle {
+    text-transform: uppercase;
+    font-size: 72px;
+  }
+
   @media (max-width: 575.98px){
+    .wrapperTitle {
+      font-size: 34px;
+    }
     .wrapper__buttons {
       flex-direction: column;
       align-items: center;
